@@ -1,11 +1,11 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
 
-start_url = 'http://hanzidb.org/character-list/general-standard?page='
+start_url = 'http://hanzidb.org/character-list/by-frequency?page='
 
 class KanjiSpider(scrapy.Spider):
     name = 'kanjispider'
-    start_urls = [start_url + str(i + 1) for i in range(82)]
+    start_urls = [start_url + str(i + 1) for i in range(100)]
 
     def parse(self, response):
         table = response.css("table")
